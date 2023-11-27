@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello Survey - register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta content="" name="author" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
+    <link href="assets/css/account.css" rel="stylesheet" />
+
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+
+
+
+<body>
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark navbar-light">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo-1-1.png" alt="" class="" height="60">
+            </a>
+            <div class="switch-action">
+                <div class="switch-action__label">Already a user?</div>
+                <a class="pf-btn pf-btn--inline switch-action__btn pf-btn--bordered" href="login.html">Log In</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <main>
+        <div class="panel-wrapper">
+            <div class="frm-fill">
+                <div class="display-flex-column full-height flex-center signup-container">
+                    <div class="main-panel__content main-panel__content--login">
+                        <form method="post" action="/Account" class="signup">
+                            <h1 class="main-panel__title ">Sign Up</h1>
+							<hr class="frmhr">
+                             
+                            <div class="pf-form">
+                                <div class="pf-form__message pf-form__message--error pf-form__message--padding">
+                                    
+                                </div>
+                                <div class="pf-form__textfield">
+                                    <input class="pf-form__textfield__input" type="email" placeholder="Email" name="Email" id="Email" />
+                                    <div class="pf-form__message pf-form__message--error"></div>
+                                </div>
+                                <div class="pf-form__textfield">
+                                    <input maxlength="12" class="pf-form__textfield__input pf-clearer" placeholder="Mobile Number" name="MobileNumber" id="MobileNumber" onkeypress="return isNumberKey(event)" type="tel" />
+                                    <div class="pf-form__message pf-form__message--error"></div>
+                                </div>
+                                <div class="pf-form__textfield">
+                                    <input type="Password" class="pf-form__textfield__input password" placeholder="Password" id="Password" name="Password" />
+                                    <span toggle="#Password" title="Show" class="fa fa-fw fa-eye field-icon toggle-password" ></span>
+                                    <div class="pf-form__message pf-form__message--error"></div>
+                                </div>
+                                <div class="pf-form__textfield">
+                                    <input class="pf-form__textfield__input" maxlength="6" placeholder="Country Code" id="countrycode" type="text" name="countrycode" value="" />
+                                    <div class="pf-form__message pf-form__message--error"></div>
+                                </div>
+                                <div class="pf-form__textfield">
+                                    <div class="controls captcha">
+                                        <div class="g-recaptcha"></div>
+                                    </div>
+                                </div>
+
+                                <div class="pf-form__textfield">
+                                    <input class="pf-form__textfield-button pf-form__textfield-button--submit" type="submit" value="Register" style="width: 100%;" />
+                                </div>
+
+                            </div>
+                        <div class="pf-copyright">© 2020 Survycliq. All Rights Reserved</div>
+                    </div>
+
+
+                </div>
+            </div>
+		
+		
+		
+            <div class="featured-panel">
+                <div class="featured-panel__frame">
+                    <div class="lgnsdtxt">
+					   <h2> Welcome to Survey Cliq </h2>
+					   <hr>
+					   
+					   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus magna, sagittis quis egestas vitae, semper in mi. Mauris auctor massa pharetra neque efficitur consequat. </p>
+					   
+
+				   </div>
+                </div>
+            </div>
+        
+		
+		</div>
+    </main>
+
+    <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+    <script type="text/javascript">
+       
+        $(document).ready(function () {
+
+            $("#signup-slide").owlCarousel({
+                autoPlay: 3000,
+                loop: true,
+                margin: 10,
+                nav: false,
+                autoplay: true,
+                items: 1,
+                itemsDesktop: [1000, 1],
+                itemsDesktopSmall: [990, 1],
+                itemsTablet: [768, 1],
+                pagination: true,
+                slideSpeed: 1000,
+            });
+        });
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31
+                && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+
+        function myFunction() {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        $(".toggle-password").click(function () {
+         //   $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+                $('.toggle-password').removeClass("fa-eye").addClass("fa-eye-slash");
+               $('.toggle-password').attr("title", "Hide");
+
+            } else {
+                input.attr("type", "password");
+                $('.toggle-password').attr("title", "Show");
+                 $('.toggle-password').removeClass("fa-eye-slash").addClass("fa-eye");
+            }
+        });
+
+        
+
+        // $('#ZipCode').keyup(function () {
+        //    var foo = $(this).val().split("-").join(""); // remove hyphens
+        //    if (foo.length > 0) {
+        //        foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
+        //    }
+        //    $(this).val(foo);
+        //});
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>
